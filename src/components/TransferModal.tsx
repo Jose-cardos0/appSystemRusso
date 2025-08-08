@@ -33,7 +33,7 @@ export function TransferModal({ isOpen, onClose }: TransferModalProps) {
     notification.style.backdropFilter = "blur(0px)";
     notification.innerHTML = `
       <div class="flex items-center gap-3 w-full">
-        <img src="https://i.ibb.co/bgqnF9Mv/icongoogle.png" alt="Google" class="w-7 h-7" />
+        <img src="https://i.ibb.co/bgqnF9Mv/icongoogle.png" alt={t("google")} class="w-7 h-7" />
         <div class="flex-1">
           <p class="font-medium text-[14px] leading-tight">${t(
             "transferCompletedSuccessfully"

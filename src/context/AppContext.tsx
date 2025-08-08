@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { Form, UserData } from "../types";
-import { ru } from "../translations/ru";
+import { de } from "../translations/de";
 
 interface AppContextData {
   userData: UserData;
@@ -22,24 +22,24 @@ const INITIAL_USER_DATA: UserData = {
 const INITIAL_FORMS: Form[] = [
   {
     id: "1",
-    title: ru.redemption,
-    type: ru.idleMoney,
+    title: de.redemption,
+    type: de.idleMoney,
     reward: 12.45,
     image:
-      "https://itsmoney.com.br/_next/image?url=https%3A%2F%2Fitsmoney-admin.investimentosblue.com.br%2Fapp%2Fuploads%2F2023%2F11%2Fshutterstock_2277122315.webp&w=1920&q=75",
+      "https://itsmoney.com.br/_next/image?url=https%3A%2F%2FItsmoney-admin.investimentosblue.com.br%2Fapp%2Fuploads%2F2023%2F11%2Fshutterstock_2277122315.webp&w=1920&q=75",
   },
   {
     id: "2",
-    title: ru.redemption,
-    type: ru.idleMoney,
+    title: de.redemption,
+    type: de.idleMoney,
     reward: 15.89,
     image:
       "https://itsmoney.com.br/_next/image?url=https%3A%2F%2FItsmoney-admin.investimentosblue.com.br%2Fapp%2Fuploads%2F2023%2F11%2Fshutterstock_2277122315.webp&w=1920&q=75",
   },
   {
     id: "3",
-    title: ru.redemption,
-    type: ru.idleMoney,
+    title: de.redemption,
+    type: de.idleMoney,
     reward: 9.78,
     image:
       "https://itsmoney.com.br/_next/image?url=https%3A%2F%2FItsmoney-admin.investimentosblue.com.br%2Fapp%2Fuploads%2F2023%2F11%2Fshutterstock_2277122315.webp&w=1920&q=75",
@@ -54,7 +54,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         ? { ...INITIAL_USER_DATA, ...JSON.parse(saved) }
         : INITIAL_USER_DATA;
     } catch (error) {
-      console.error("Ошибка при загрузке данных пользователя:", error);
+      console.error("Fehler beim Laden der Benutzerdaten:", error);
       return INITIAL_USER_DATA;
     }
   });
@@ -116,7 +116,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 export function useApp() {
   const context = useContext(AppContext);
   if (!context) {
-    throw new Error("useApp должен использоваться внутри AppProvider");
+    throw new Error(
+      "useApp muss innerhalb eines AppProviders verwendet werden"
+    );
   }
   return context;
 }

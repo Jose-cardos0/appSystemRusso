@@ -81,7 +81,7 @@ export function Home() {
           >
             <img
               src="https://i.ibb.co/ycd47ZT9/paypal-1.png"
-              alt="PayPal"
+              alt={t("paypal")}
               className="w-5 h-5"
             />
             {t("transferMoney")}

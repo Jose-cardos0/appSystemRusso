@@ -1,10 +1,10 @@
-import { ru } from "../translations/ru";
+import { de } from "../translations/de";
 
-export type TranslationKey = keyof typeof ru;
+export type TranslationKey = keyof typeof de;
 
 export function useTranslation() {
   const t = (key: TranslationKey): string => {
-    return ru[key] || key;
+    return de[key] || key;
   };
 
   return { t };
