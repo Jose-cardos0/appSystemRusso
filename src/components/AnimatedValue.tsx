@@ -16,7 +16,7 @@ export function AnimatedValue({ value, className }: AnimatedValueProps) {
   const count = useMotionValue(0);
   const ref = React.useRef(null);
   const isInView = useInView(ref);
-  const rounded = useTransform(count, (latest) => `$ ${latest.toFixed(2)}`);
+  const rounded = useTransform(count, (latest) => `€ ${latest.toFixed(2)}`);
 
   React.useEffect(() => {
     if (isInView) {
